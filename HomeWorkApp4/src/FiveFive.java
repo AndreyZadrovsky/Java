@@ -106,6 +106,9 @@ import java.util.Scanner;
                 int countDia2 = 0;
                 int countDia3 = 0;
                 int countDia4 = 0;
+                int countDia5 = 0;
+                int countDia6 = 0;
+
                 for (int j = 0;j < SIZE; j++){
                     if (map[i][j] == symb){
                         countStr += 1;
@@ -126,14 +129,26 @@ import java.util.Scanner;
 
                     if (j < (SIZE-1)){
                         if (map[j][j + 1] == symb) countDia3 += 1;
-                        else if (countDia3 < DOTS_TO_WIN) countDia3 = 0;
+//                        ЕСЛИ БУДЕТ ПОЛЕ БОЛЬШЕ
+//                        else if (countDia3 < DOTS_TO_WIN) countDia3 = 0;
                     }
                     if (j > 0) {
                         if (map[j][j - 1] == symb) countDia4 += 1;
-                        else if (countDia3 < DOTS_TO_WIN) countDia4 = 0;
+//                        ЕСЛИ БУДЕТ ПОЛЕ БОЛЬШЕ
+//                        else if (countDia3 < DOTS_TO_WIN) countDia4 = 0;
+                    }
+                    if (j < (SIZE - 1)){
+                        if (map[j][SIZE-j-2] == symb) countDia5 +=1;
+//                        ЕСЛИ БУДЕТ ПОЛЕ БОЛЬШЕ
+//                        else if (countDia5 < DOTS_TO_WIN) countDia5 = 0;
+                    }
+                    if (j > 0){
+                        if (map[j][SIZE-j] == symb) countDia6 +=1;
+//                        ЕСЛИ БУДЕТ ПОЛЕ БОЛЬШЕ
+//                        else if (countDia5 < DOTS_TO_WIN) countDia6 = 0;
                     }
                 }
-                if ((countStr == DOTS_TO_WIN) || (countSto == DOTS_TO_WIN) || (countDia1 == DOTS_TO_WIN) || (countDia2 == DOTS_TO_WIN) || (countDia3 == DOTS_TO_WIN) || (countDia4 == DOTS_TO_WIN)){
+                if ((countStr == DOTS_TO_WIN) || (countSto == DOTS_TO_WIN) || (countDia1 == DOTS_TO_WIN) || (countDia2 == DOTS_TO_WIN) || (countDia3 == DOTS_TO_WIN) || (countDia4 == DOTS_TO_WIN) || (countDia5 == DOTS_TO_WIN) || (countDia6 == DOTS_TO_WIN)){
                     return true;
                 }
             }
