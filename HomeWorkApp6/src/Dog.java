@@ -1,15 +1,15 @@
 public class Dog extends Animals {
     public static int countDog = 0;
-    public Dog(String name, int loRun, int loSwim, int lim) {
-        super(name, loRun, loSwim, lim);
+    public Dog(String name, int lim) {
+        super(name, lim);
         countDog +=1;
     }
     public void Swim (int loSwim){
-        if (this.loSwim > 10){
-            System.out.println("Собаки не могут проплыть " + this.loSwim + " м.");
+        if (loSwim > 10){
+            System.out.println(this.name + " не может проплыть " + loSwim + " м.");
         }
         else {
-            System.out.println(this.name + " проплыл " + this.loSwim + " м.");
+            System.out.println(this.name + " проплыл " + loSwim + " м.");
         }
     }
 }
