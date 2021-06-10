@@ -17,21 +17,9 @@ public class HomeWorkApp7 {
 
         Plate plate = new Plate(scanner.nextInt());
         plate.info();
+        System.out.println();
 
-        for (int i = 0; i< cat.length; i++){
-            if (plate.getFood() >= cat[i].getAppetite()) {
-                cat[i].eat(plate);
-                cat[i].setFull();
-                cat[i].conFull(0);
-                plate.info();
-            }
-            else {
-                cat[i].conFull(cat[i].getAppetite() - plate.getFood());
-                System.out.println("Сколько ещё доложим еды?");
-                plate.setFood(scanner.nextInt());
-                i--;
-
-            }
+        for (int i = 0; i< cat.length; i++)  cat[i].eat(plate);
         }
     }
-}
+
