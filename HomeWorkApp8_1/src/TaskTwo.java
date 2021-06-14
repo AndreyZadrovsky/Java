@@ -19,12 +19,11 @@ public class TaskTwo {
         }
         System.out.println();
         System.out.println();
-        System.out.println(wordAI);
         String wordCipher = "###############";
         while (!Compare (wordCipher,wordAI)) {
             System.out.print("Введите ваш вариант: ");
             String wordPl = scanner.nextLine();
-            for (int i = 0; i < wordPl.length(); i++) {
+            for (int i = 0; i < wordAI.length(); i++) {
                 if (wordAI.charAt(i) == wordPl.charAt(i)) {
                     char[] wordCipherChar = wordCipher.toCharArray();
                     wordCipherChar[i] = wordAI.charAt(i);
