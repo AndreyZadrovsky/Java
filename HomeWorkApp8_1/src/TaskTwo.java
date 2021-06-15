@@ -20,19 +20,26 @@ public class TaskTwo {
         System.out.println();
         System.out.println();
         String wordCipher = "###############";
+        String minWord;
         while (!Compare (wordCipher,wordAI)) {
             System.out.print("Введите ваш вариант: ");
             String wordPl = scanner.nextLine();
-            for (int i = 0; i < wordAI.length(); i++) {
-                if (wordAI.charAt(i) == wordPl.charAt(i)) {
-                    char[] wordCipherChar = wordCipher.toCharArray();
-                    wordCipherChar[i] = wordAI.charAt(i);
-                    wordCipher = String.valueOf(wordCipherChar);
-                }
+            if (wordAI.length() <= wordPl.length()) {
+                minWord = wordAI;
             }
+            else minWord = wordPl;
+                for (int i = 0; i < minWord.length(); i++) {
+                    if (wordAI.charAt(i) == wordPl.charAt(i)) {
+                        char[] wordCipherChar = wordCipher.toCharArray();
+                        wordCipherChar[i] = wordAI.charAt(i);
+                        wordCipher = String.valueOf(wordCipherChar);
+                    }
+                }
+
             System.out.println(wordCipher);
         }
         }
+
 
     private static boolean Compare (String wordCipher, String wordAI) {
         char[] wordCipherCompare = wordCipher.toCharArray();
