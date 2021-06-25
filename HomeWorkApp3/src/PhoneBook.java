@@ -1,17 +1,21 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 
 public class PhoneBook {
 
 
-    HashMap<String, List<Integer>> phoneBook = new HashMap<>();
-    PhoneBook(String name, List<Integer> phone){
-        phoneBook.put(name, phone);
+    HashMap<String, HashSet<Integer>> phoneBook ;
+
+    public PhoneBook(){
+       this.phoneBook = new HashMap<>();
     }
 
-    public void add (String name, List<Integer> phone){
-        phoneBook.put(name, phone);
+    public void add (String name, Integer phone){
+        HashSet<Integer> nom = phoneBook.getOrDefault(name, new HashSet<>());
+        nom.add(phone);
+        phoneBook.put(name, nom);
 
     }
     public void Print(){
@@ -19,6 +23,9 @@ public class PhoneBook {
 
     }
     public void Find(String name){
-        System.out.println(name + " - " + phoneBook.get(name));
+        if (phoneBook.containsKey(name)) {
+            System.out.println(name + " - " + phoneBook.get(name));
+        }
+        else System.out.println(" Такой фамилии нет в списке");
     }
 }

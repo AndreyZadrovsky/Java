@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class TaskTwo {
     //    2. Написать простой класс ТелефонныйСправочник, который хранит в себе список фамилий и телефонных номеров.
@@ -7,18 +7,18 @@ public class TaskTwo {
 //    несколько телефонов, тогда при запросе такой фамилии должны выводиться все телефоны.
 
     public static void main(String[] args) {
-        ArrayList<Integer> ivanovPhone = new ArrayList<>();
-        ivanovPhone.add(4131215);
-        ivanovPhone.add(2358659);
-        PhoneBook phoneBook = new PhoneBook("Иванов", ivanovPhone);
+        PhoneBook book = new PhoneBook();
+        book.add("Петров",4139558);
+        book.add("Иванов",5261548);
+        book.add("Васечкин",1532678);
+        book.add("Иванов",2157848);
+        book.add("Иванов",8594521);
+        book.add("Петров",4512675);
+        book.add("Петров",4586352);
+        book.add("Васечкин",2996610);
+        book.add("Петров",2969610);
 
-        ArrayList<Integer> petrovPhone = new ArrayList<>();
-        petrovPhone.add(5248625);
-        petrovPhone.add(4235627);
-        phoneBook.add("Петров", petrovPhone);
-
-        phoneBook.Print();
-
-        phoneBook.Find("Иванов");
+        book.Print();
+        book.Find("Васечкин");
     }
 }
