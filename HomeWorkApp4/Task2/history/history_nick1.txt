@@ -1,0 +1,14 @@
+[nick1]: 111
+[nick1]: 1
+[nick1]: 1
+[nick1]: 1
+[nick1]: 1
+[nick1]: 1
+[nick2]: 1
+[nick2]: 11
+[nick2]: 1
+[nick2]: 1
+[nick2]: 1222
+[nick2]: 2
+[nick2]: 2
+[nick2]: 2
