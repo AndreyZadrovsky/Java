@@ -12,5 +12,3 @@
 [nick2]: 2
 [nick2]: 2
 [nick2]: 2
-[nick1] ->[nick1]: zxczxc
-[nick1] ->[nick1]: zxczxc
