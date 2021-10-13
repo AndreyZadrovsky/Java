@@ -2,6 +2,8 @@ package Chat.Chat_server;
 
 import Chat.Chat_server.Error.UserNotFoundExeption;
 import Chat.Chat_server.Error.WrongCredentialsException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -11,6 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ChatClientHandler {
+    private static  final Logger log = (Logger) LogManager.getLogger();
     public static final String REGEX = "%&%";
     private Socket socket;
     private DataInputStream in;
@@ -24,7 +27,7 @@ public class ChatClientHandler {
             this.socket = socket;
             this.in = new DataInputStream(socket.getInputStream());
             this.out = new DataOutputStream(socket.getOutputStream());
-            System.out.println("Обработчик создан");
+            log.info("Обработчик создан");
             this.server = server;
             this.executorService = server.getExecutorService();
         } catch (IOException e) {

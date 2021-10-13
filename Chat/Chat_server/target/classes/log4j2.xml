@@ -8,6 +8,7 @@
         <File name="FILE1" fileName="${basePath}/logfile1.log" append="true">
             <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m%n"/>
         </File>
+        
 
         <Console name="STDOUT" target="SYSTEM_OUT">
             <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m%n"/>

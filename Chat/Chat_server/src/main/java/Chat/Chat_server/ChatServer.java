@@ -2,6 +2,8 @@ package Chat.Chat_server;
 
 import Chat.Chat_server.Auth.AuthService;
 import Chat.Chat_server.Auth.DatabaseAuthService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -12,6 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ChatServer {
+    private static  final Logger log = (Logger) LogManager.getLogger();
     private static final int PORT = 5050;
     private AuthService authService;
     private Map<String,ChatClientHandler> handlers;
@@ -27,11 +30,11 @@ public class ChatServer {
     public void start() {
 
         try(ServerSocket serverSocket = new ServerSocket(PORT)){
-            System.out.println("Сервер запущен");
+            log.info( "Сервер запущен");
             while(true){
-                System.out.println("Ожидаю подключения...");
+                log.info("Ожидаю подключения...");
                 Socket socket = serverSocket.accept();
-                System.out.println("Клиент подключился");
+                log.info("Клиент подключился");
                 new ChatClientHandler(socket, this).handle();
             }
         }catch (IOException e){
